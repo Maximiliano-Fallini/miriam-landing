@@ -1,0 +1,15 @@
+# Basura / caché local (NO subir a GitHub)
+.freebuff/
+
+# Notas personales de desarrollo
+info landing.txt
+images/instrucciones.md
+
+# Imágenes duplicadas en PNG pesado (el sitio usa las versiones .webp)
+images/background.png
+images/perfil.png
+
+# Archivos del sistema
+.DS_Store
+Thumbs.db
+desktop.ini
