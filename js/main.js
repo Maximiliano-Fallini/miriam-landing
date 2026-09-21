@@ -416,6 +416,27 @@ document.addEventListener('keydown', (e) => {
     }
 });
 
+// Animación de entrada de la sección "Trabajos Realizados" al scrollear
+(function initPracticesReveal() {
+    const section = document.getElementById('practices');
+    const carousel = document.getElementById('cfCarousel');
+    if (!section || !carousel) return;
+    // Fallback: sin IntersectionObserver, mostrar directo
+    if (!('IntersectionObserver' in window)) {
+        section.classList.add('in-view');
+        return;
+    }
+    const revealObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                section.classList.add('in-view');
+                revealObserver.unobserve(section);
+            }
+        });
+    }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+    revealObserver.observe(section);
+})();
+
 // =========================================
 // Trabajos Realizados: carrusel coverflow infinito
 // =========================================
@@ -451,7 +472,9 @@ function initCoverflow() {
             void track.offsetWidth; // fuerza reflow
             track.style.transition = '';
         }
-        // Difuminado agresivo: solo la activa y una vecina apenas visible
+        // Difuminado agresivo: solo la activa y una vecina apenas visible.
+        // Actúa sobre .cf-slide; la animación de entrada en cascada vive en
+        // .cf-card (hijo interno), así no se pisan entre sí.
         all.forEach((s, k) => {
             const dist = Math.abs(k - pos);
             if (dist === 0) {

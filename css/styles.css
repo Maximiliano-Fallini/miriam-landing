@@ -545,6 +545,61 @@ ul {
     max-width: 1400px;
 }
 
+/* --- Animación de entrada al scrollear (se activa con .in-view desde JS) --- */
+/* Estado inicial: título + carrusel ocultos y desplazados, bien visible */
+#practices .section-header {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+    will-change: opacity, transform;
+}
+
+#practices .cf-wrap {
+    opacity: 0;
+    transform: translateY(90px) scale(0.96);
+    transition: opacity 1.1s ease 0.2s, transform 1.1s cubic-bezier(0.22, 0.61, 0.36, 1) 0.2s;
+    will-change: opacity, transform;
+}
+
+/* Cascada: cada tarjeta del coverflow entra con su propio delay.
+   Se anima .cf-card (hijo interno que el JS del coverflow JAMÁS toca:
+   el JS solo escribe opacity/transform inline en .cf-slide, así CSS y JS
+   trabajan en elementos distintos y no pelean). */
+#practices:not(.in-view) .cf-slide .cf-card {
+    opacity: 0;
+    transform: translateY(70px) scale(0.9);
+}
+
+#practices.in-view .cf-slide .cf-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: opacity 0.7s ease, transform 0.7s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+#practices.in-view .cf-slide:nth-child(1) .cf-card { transition-delay: 0.35s; }
+#practices.in-view .cf-slide:nth-child(2) .cf-card { transition-delay: 0.45s; }
+#practices.in-view .cf-slide:nth-child(3) .cf-card { transition-delay: 0.55s; }
+#practices.in-view .cf-slide:nth-child(4) .cf-card { transition-delay: 0.65s; }
+#practices.in-view .cf-slide:nth-child(5) .cf-card { transition-delay: 0.75s; }
+#practices.in-view .cf-slide:nth-child(n+6) .cf-card { transition-delay: 0.85s; }
+
+/* Estado visible: todo vuelve a su lugar */
+#practices.in-view .section-header,
+#practices.in-view .cf-wrap {
+    opacity: 1;
+    transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    #practices .section-header,
+    #practices .cf-wrap,
+    #practices .cf-slide .cf-card {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+}
+
 /* Difuminado gradual desde el centro de la card activa hacia los bordes */
 .cf-mask {
     padding-bottom: 24px;
