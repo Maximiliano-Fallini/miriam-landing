@@ -1,8 +1,10 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preload" as="image" href="/images/background-optimized.avif" type="image/avif" media="(min-width: 769px)" fetchpriority="high">
+    <link rel="preload" as="image" href="/images/background-mobile.avif" type="image/avif" media="(max-width: 768px)" fetchpriority="high">
     <link rel="icon" type="image/x-icon" sizes="48x48" href="/favicon.ico">
     <link rel="icon" type="image/png" sizes="192x192" href="/favicon-192.png">
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
@@ -69,7 +71,7 @@
     <!-- CSS -->
     <link rel="stylesheet" href="css/styles.css">
 </head>
-<body>
+<body class="hero-bg-loading">
     <!-- Navigation -->
     <nav class="navbar" id="navbar">
         <div class="container">
@@ -154,8 +156,8 @@
 
             <div class="services-grid">
                 <!-- Medicina China -->
-                <div class="service-card" data-practice-img="images/Practicas/acupuntura.jpeg">
-                    <img class="service-image" src="images/Practicas/acupuntura.jpeg" alt="Medicina China" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/acupuntura.webp">
+                    <img class="service-image" src="images/Practicas/acupuntura.webp" alt="Medicina China" loading="lazy">
                     <h2>Medicina China</h2>
                     <p class="service-desc">Sistema médico holístico de más de 2.500 años de historia que concibe la salud como un equilibrio dinámico entre el cuerpo, la mente y el entorno. Tratamos la causa raíz, no solo el síntoma.</p>
                     <div class="accordion">
@@ -194,8 +196,8 @@
                 </div>
 
                 <!-- Psicología Social Psicoanalítica -->
-                <div class="service-card" data-practice-img="images/Practicas/psicologia social psicoanalitica.jpg">
-                    <img class="service-image" src="images/Practicas/psicologia social psicoanalitica.jpg" alt="Psicología Social Psicoanalítica y Parapsicología" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/psicologia social psicoanalitica.webp">
+                    <img class="service-image" src="images/Practicas/psicologia social psicoanalitica.webp" alt="Psicología Social Psicoanalítica y Parapsicología" loading="lazy">
                     <h2>Psicología Social Psicoanalítica y Parapsicología</h2>
                     <p class="service-desc">Acompañamiento terapéutico para sanar traumas, fobias y patrones repetitivos mediante regresiones e hipnosis clínica reparadora, además de limpiezas energéticas y protección del campo energético personal y ambiental.</p>
                     <div class="accordion">
@@ -219,8 +221,8 @@
                 </div>
 
                 <!-- Terapias Energéticas -->
-                <div class="service-card" data-practice-img="images/Practicas/terapias energeticas.jpg">
-                    <img class="service-image" src="images/Practicas/terapias energeticas.jpg" alt="Terapias Energéticas" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/terapias energeticas.webp">
+                    <img class="service-image" src="images/Practicas/terapias energeticas.webp" alt="Terapias Energéticas" loading="lazy">
                     <h2>Terapias Energéticas</h2>
                     <p class="service-desc">Técnicas de armonización y sanación del campo energético: Reiki presencial y a distancia, Flores de Bach, Constelaciones Familiares y limpiezas energéticas para restaurar tu equilibrio y bienestar.</p>
                     <div class="accordion">
@@ -246,8 +248,8 @@
                 </div>
 
                 <!-- Tarot Profesional -->
-                <div class="service-card" data-practice-img="images/Practicas/tarotljgp.jpg">
-                    <img class="service-image" src="images/Practicas/tarotljgp.jpg" alt="Tarot Profesional" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/tarotljgp.webp">
+                    <img class="service-image" src="images/Practicas/tarotljgp.webp" alt="Tarot Profesional" loading="lazy">
                     <h2>Tarot Profesional</h2>
                     <p class="service-desc">Lecturas de Tarot personalizadas, presenciales y online, para obtener claridad y orientación profunda sobre amor, trabajo, vínculos y decisiones de vida.</p>
                     <div class="accordion">
@@ -266,8 +268,8 @@
                 </div>
 
                 <!-- Astrología Evolutiva -->
-                <div class="service-card" data-practice-img="images/Practicas/astrología.jpeg">
-                    <img class="service-image" src="images/Practicas/astrología.jpeg" alt="Astrología Evolutiva" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/astrología.webp">
+                    <img class="service-image" src="images/Practicas/astrología.webp" alt="Astrología Evolutiva" loading="lazy">
                     <h2>Astrología Evolutiva</h2>
                     <p class="service-desc">Descubrí el mapa único de tu alma a través del estudio de tu cielo: Carta Natal, Revolución Solar y Sinastría para comprenderte y tomar el timón de tu vida.</p>
                     <div class="accordion">
@@ -291,8 +293,8 @@
                 </div>
 
                 <!-- Péndulo Radiestésico -->
-                <div class="service-card" data-practice-img="images/Practicas/pendulo.jpeg">
-                    <img class="service-image" src="images/Practicas/pendulo.jpeg" alt="Péndulo Radiestésico" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/pendulo.webp">
+                    <img class="service-image" src="images/Practicas/pendulo.webp" alt="Péndulo Radiestésico" loading="lazy">
                     <h2>Péndulo Radiestésico</h2>
                     <p class="service-desc">Una de las herramientas de radiestesia más antiguas y efectivas: conecta con tu subconsciente y la sabiduría intuitiva para obtener respuestas claras, precisas y directas.</p>
                     <div class="accordion">
@@ -317,8 +319,8 @@
                 </div>
 
                 <!-- Grafología Terapéutica y Psicológica -->
-                <div class="service-card" data-practice-img="images/Practicas/grafologiaterapeuticaypsicologica.jpg">
-                    <img class="service-image" src="images/Practicas/grafologiaterapeuticaypsicologica.jpg" alt="Grafología Terapéutica y Psicológica" loading="lazy">
+                <div class="service-card" data-practice-img="images/Practicas/grafologiaterapeuticaypsicologica.webp">
+                    <img class="service-image" src="images/Practicas/grafologiaterapeuticaypsicologica.webp" alt="Grafología Terapéutica y Psicológica" loading="lazy">
                     <h3>Grafología Terapéutica y Psicológica</h3>
                     <p class="service-desc">El lenguaje secreto de tu escritura: análisis de personalidad, emociones y estado psíquico a través del trazo manuscrito, tan único como tu huella dactilar.</p>
                     <div class="accordion">
@@ -360,7 +362,7 @@
                 <div class="cf-track">
                     <div class="cf-slide" data-i="0">
                         <div class="cf-card">
-                            <img src="images/Practicas/acupuntura craneal para alzheimer.jpeg" alt="Ilustración de acupuntura craneal para tratamiento de Alzheimer" loading="lazy">
+                            <img src="images/Practicas/acupuntura craneal para alzheimer.webp" alt="Ilustración de acupuntura craneal para tratamiento de Alzheimer" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Acupuntura Craneal para Alzheimer</h3>
                                 <p>Estimulación de áreas del cuero cabelludo correspondientes a la corteza cerebral: un apoyo natural y complementario para enfermedades neurodegenerativas como el Alzheimer.</p>
@@ -369,7 +371,7 @@
                     </div>
                     <div class="cf-slide side" data-i="1">
                         <div class="cf-card">
-                            <img src="images/Practicas/lifting facial con acupuntura.png" alt="Paciente recibiendo lifting facial con acupuntura" loading="lazy">
+                            <img src="images/Practicas/lifting facial con acupuntura.webp" alt="Paciente recibiendo lifting facial con acupuntura" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Lifting Facial con Acupuntura</h3>
                                 <p>Rejuvenecimiento facial natural y no invasivo: estimula la producción de colágeno y elastina, tonifica los músculos faciales y mejora la microcirculación.</p>
@@ -378,7 +380,7 @@
                     </div>
                     <div class="cf-slide side" data-i="2">
                         <div class="cf-card">
-                            <img src="images/Practicas/lifting facial mascara.jpg" alt="Aplicación de mascarilla facial con técnica de acupuntura" loading="lazy">
+                            <img src="images/Practicas/lifting facial mascara.webp" alt="Aplicación de mascarilla facial con técnica de acupuntura" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Lifting Facial con Máscara</h3>
                                 <p>Ritual de rejuvenecimiento que combina la estimulación facial con una máscara terapéutica para nutrir, hidratar y devolverle luminosidad a la piel.</p>
@@ -387,7 +389,7 @@
                     </div>
                     <div class="cf-slide side" data-i="3">
                         <div class="cf-card">
-                            <img src="images/Practicas/tratamiento alopecia acupuntura.png" alt="Sesión de acupuntura en cuero cabelludo para tratamiento de alopecia" loading="lazy">
+                            <img src="images/Practicas/tratamiento alopecia acupuntura.webp" alt="Sesión de acupuntura en cuero cabelludo para tratamiento de alopecia" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Tratamiento de Alopecia con Acupuntura</h3>
                                 <p>La acupuntura estimula la circulación del cuero cabelludo y el flujo de Qi, favoreciendo la salud del folículo y el crecimiento natural del cabello.</p>
@@ -396,7 +398,7 @@
                     </div>
                     <div class="cf-slide side" data-i="4">
                         <div class="cf-card">
-                            <img src="images/Practicas/acupuntura paralisis facial.png" alt="Paciente con acupuntura para recuperación de parálisis facial" loading="lazy">
+                            <img src="images/Practicas/acupuntura paralisis facial.webp" alt="Paciente con acupuntura para recuperación de parálisis facial" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Acupuntura para Parálisis Facial</h3>
                                 <p>Tratamiento con agujas en puntos faciales y sistémicos para recuperar el tono, la simetría y el movimiento muscular tras una parálisis facial.</p>
@@ -405,7 +407,7 @@
                     </div>
                     <div class="cf-slide side" data-i="5">
                         <div class="cf-card">
-                            <img src="images/Practicas/tratamiento moxa dolor de espalda.png" alt="Aplicación de moxaterapia para aliviar dolor de espalda" loading="lazy">
+                            <img src="images/Practicas/tratamiento moxa dolor de espalda.webp" alt="Aplicación de moxaterapia para aliviar dolor de espalda" loading="lazy">
                             <div class="cf-cap">
                                 <h3>Tratamiento de Moxa para Dolor de Espalda</h3>
                                 <p>La moxibustión aplica calor de artemisa sobre puntos del cuerpo para calentar los meridianos, aliviar el dolor muscular y articular de espalda y favorecer la circulación del Qi.</p>

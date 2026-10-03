@@ -1,5 +1,8 @@
 # Basura / caché local (NO subir a GitHub)
 .freebuff/
+# Carpeta de trabajo del asistente (scripts, pruebas y copias) y resultados de herramientas
+.work/
+.manus/
 
 # Notas personales de desarrollo
 info landing.txt

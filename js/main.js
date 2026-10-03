@@ -2,6 +2,29 @@
 // JavaScript Principal
 // =========================================
 
+// Esperar al background del hero antes de iniciar su animación.
+// La precarga en <head> y esta comprobación comparten la misma solicitud del navegador.
+// Se pide el mismo formato que usará el CSS (AVIF si el navegador lo soporta)
+// para no descargar la imagen dos veces.
+const supportsAvif = (() => {
+    try {
+        return document.createElement('canvas').toDataURL('image/avif').indexOf('data:image/avif') === 0;
+    } catch (error) {
+        return false;
+    }
+})();
+
+const heroBackground = new Image();
+heroBackground.decoding = 'async';
+heroBackground.onload = heroBackground.onerror = () => {
+    document.body.classList.remove('hero-bg-loading');
+    document.body.classList.add('hero-bg-loaded');
+};
+const heroBackgroundBase = window.matchMedia('(max-width: 768px)').matches
+    ? '/images/background-mobile'
+    : '/images/background-optimized';
+heroBackground.src = heroBackgroundBase + (supportsAvif ? '.avif' : '.webp');
+
 // Navbar Scroll Effect
 const navbar = document.getElementById('navbar');
 const navToggle = document.getElementById('navToggle');

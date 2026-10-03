@@ -283,11 +283,25 @@ ul {
     justify-content: center;
     text-align: center;
     color: var(--text-light);
-    background-image: url('../images/background.webp');
+    /* Color de reserva visible mientras llega la imagen principal. */
+    background-color: #3b2d1f;
+    /* Respaldo para navegadores que no entienden image-set(). */
+    background-image: url('../images/background-optimized.webp');
+    /* AVIF primero (mismo aspecto, ~26% menos peso); WebP como alternativa. */
+    background-image: image-set(url('../images/background-optimized.avif') type('image/avif'),
+            url('../images/background-optimized.webp') type('image/webp'));
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: scroll;
+}
+
+@media (max-width: 768px) {
+    .hero {
+        background-image: url('../images/background-mobile.webp');
+        background-image: image-set(url('../images/background-mobile.avif') type('image/avif'),
+                url('../images/background-mobile.webp') type('image/webp'));
+    }
 }
 
 .hero-overlay {
@@ -305,7 +319,16 @@ ul {
     z-index: 2;
     max-width: 900px;
     padding: 0 20px;
+    /* Se oculta solo durante la espera inicial del background. */
+}
+
+.hero-bg-loading .hero-content {
+    opacity: 0;
+}
+
+.hero-bg-loaded .hero-content {
     animation: fadeInUp 0.3s ease-out;
+    opacity: 1;
 }
 
 .hero-title {
